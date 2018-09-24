@@ -1,16 +1,18 @@
 
 div#content div{
-	width: 48%;
+	display: inline-block;	
 }
 
 div#content div.rightbox{
 	vertical-align: top;
-	background-color: black;
+	margin-top: 5px;
+	width: 60%;
 }
 
 div#content div.leftbox{
 	vertical-align: top;
-	background-color: white;
+	background-color: #848484;
+	margin-top: 5px;
 }
 
 nav.menu-nav ul li.btn{
@@ -22,7 +24,7 @@ nav.menu-nav ul li.btn{
 
 nav.menu-nav ul li.btn a{
 	color: white;
-	background-color: #9F9F9F;
+	background-color: #848484;
 	text-decoration: none;
 	padding: 2px;
 
@@ -32,6 +34,9 @@ nav.menu-nav ul li.btn:hover a{
 	color: white;
 	background-color: #BDBDBD;
 	transition: 0.5s;
+}
+header img{
+	border-radius: 55%;
 }
 
 body{
