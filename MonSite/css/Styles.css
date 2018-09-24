@@ -1,3 +1,52 @@
+
+div#content div{
+	width: 48%;
+}
+
+div#content div.rightbox{
+	vertical-align: top;
+	background-color: black;
+}
+
+div#content div.leftbox{
+	vertical-align: top;
+	background-color: white;
+}
+
+nav.menu-nav ul li.btn{
+	list-style-type: none;
+ 	text-decoration: none;
+ 	color: #000;
+ 	margin: 5px;
+}
+
+nav.menu-nav ul li.btn a{
+	color: white;
+	background-color: #9F9F9F;
+	text-decoration: none;
+	padding: 2px;
+
+}
+
+nav.menu-nav ul li.btn:hover a{
+	color: white;
+	background-color: #BDBDBD;
+	transition: 0.5s;
+}
+
+body{
+	color: white;
+	background-color: #9F9F9F;
+}
+
+header{
+	background-color: #848484;
+}
+
+footer{
+	;
+}
+
 /*
 
 p.partie1{
@@ -8,9 +57,7 @@ p.partie2{
 	color: red;
 }
 
-body{
-	background-color: #9F9F9F;
-}
+
 
 h1{
 	padding-left: 300px;
