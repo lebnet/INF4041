@@ -1,2 +1,2 @@
-# -INF4041
+# INF4041
 Projet programmation web
