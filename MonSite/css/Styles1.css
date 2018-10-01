@@ -17,7 +17,7 @@ div#content div.centralbox{
 }
 
 
-nav.menu-nav ul li.btn{
+nav.menu-nav1 ul li.btn{
 	list-style-type: none;
 	display: inline;
  	text-decoration: none;
@@ -25,7 +25,7 @@ nav.menu-nav ul li.btn{
  	margin: 5px;
 }
 
-nav.menu-nav ul li.btn a{
+nav.menu-nav1 ul li.btn a{
 	color: black;
 	background-color: #848484;
 	text-decoration: none;
@@ -33,7 +33,7 @@ nav.menu-nav ul li.btn a{
 
 }
 
-nav.menu-nav ul li.btn:hover a{
+nav.menu-nav1 ul li.btn:hover a{
 	color: black;
 	background-color: #BDBDBD;
 	transition: 0.5s;
