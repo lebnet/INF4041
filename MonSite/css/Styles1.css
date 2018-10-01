@@ -3,20 +3,23 @@ div#content div{
 	display: inline-block;	
 }
 
-div#content div.rightbox{
-	vertical-align: top;
+div#content div.centralbox_ext{
+	display: inline-block;
+	background-color: #E6E6E6;
+	margin-top: 5px;
+}
+
+div#content div.centralbox{
+	display: inline-block;
+	background-color: white;
 	margin-top: 5px;
 	width: 60%;
 }
 
-div#content div.leftbox{
-	vertical-align: top;
-	background-color: #848484;
-	margin-top: 5px;
-}
 
 nav.menu-nav ul li.btn{
 	list-style-type: none;
+	display: inline;
  	text-decoration: none;
  	color: #000;
  	margin: 5px;
@@ -39,13 +42,18 @@ header img{
 	border-radius: 55%;
 }
 
+
 body{
 	color: black;
-	background-color: white
-;
+	background-color: white;
 }
 
+h1.titre{
+	text-align: center;
+	}
+
 header{
+	
 	background-color: #848484;
 }
 
