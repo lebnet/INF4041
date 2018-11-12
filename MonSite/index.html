@@ -1,70 +1,272 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Monsite</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="css/Styles.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	</head>
-	<body>
-		<div class="container">
+
+<style>
+nav ul li {
+	display: inline-block;
+	width: 180px;
+}
+
+
+table tr th.header-titre {
+	text-align:center;
+	width:100%;
+	padding:5px;
+}
+
+section.card {
+	display: flex-inline;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	}
+
+section.card {	&::-webkit-scrollbar {
+     display: none;
+   }
+ }
+
+div.card--content{
+	order: 0;
+	flex-grow: auto;
+}
+
+
+</style>
+
+<head>
+	<title>Site2Musique</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/Styles.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
 		<!--Haut de page -->
 		<header>
-			<a href="index.html">
-			<img src="img/logo.png" width="50" height="50">
-			</a>
-			<h1 classe="titre">Mon site</h1>
+			<table class="tg">
+				<tr>
+					<th class="header"> <a href="index.html">
+						<img src="img/logo.png" width="50" height="50">
+					</a></th>
+					<th class="header-titre"><h1 class="titre">Site musicalement votre</h1></th>
+				</tr>
+			</table>
 
 		</header>
 
 		<!--Menu de navigation -->
 
+		<main id="app">
+
+			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="true" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse show" id="navbarsExample07" style="">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item" v-on:click="currentPage = 'accueil'">
+							<a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item" v-on:click="currentPage = 'nouveautes'">
+							<a class="nav-link" href="#">Nouveautés <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item" v-on:click="currentPage = 'categories'">
+							<a class="nav-link" href="#">Catégories <span class="sr-only">(current)</span></a>
+						</li>
+					</ul>
+					<form class="form-inline">
+						<input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="search">
+						<button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+					</form>
+					<form class="form-inline">.
+						<button class="btn btn-outline-info my-2 my-sm-0" v-on:click="currentPage = 'inscription'"type="submit">Inscription</button>
+					</form>
+					<form class="form-inline">.
+						<button class="btn btn-outline-info my-2 my-sm-0" v-on:click="currentPage = 'connexion'"type="submit">Connexion</button>
+					</form>
+				</div>
 			</nav>
 
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			    <a class="navbar-brand" href="index.html">Accueil</a>
-			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-			      <span class="navbar-toggler-icon"></span>
-			    </button>
 
-			    <div class="collapse navbar-collapse" id="navbarColor01">
-			      <ul class="navbar-nav mr-auto">
-			        <li class="nav-item active">
-			          <a class="nav-link" href="nouveautes.html">Nouveautés <span class="sr-only">(current)</span></a>
-			        </li>
-			        <li class="nav-item">
-			          <a class="nav-link" href="categories.html">Catégories</a>
-			        </li>
+			<section v-if="currentPage === 'accueil'" id="accueil">
+				<!--Contenue sous forme de boite -->
+				<h1>Bienvenue !</h1>
+				<p class="partie1">Allume ton enceinte, ça part !</p>
 
-			      </ul>
-			      <form class="form-inline">
-			        <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="search">
-			        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-			      </form>
-			    </div>
-			  </nav>
+				<p class="partie2">Tu peux écouter ce qui te plait ici :
+					<a href="http://youtube.com" target="_BLANK">Lien youtube</a></p>
+
+					<section class="card">
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/iXp9xuNi0mU">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto src="https://www.youtube.com/embed/OA8aw07dpg0"> </iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/iXp9xuNi0mU">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/iXp9xuNi0mU">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/iXp9xuNi0mU">
+						</iframe>
+						</div>
+					</section>
+
+				</section>
 
 
 
-		<!--Contenue sous forme de boite -->
-		<h1>Bienvenue !</h1>
-			<p class="partie1">
-				Allume ton enceinte, ça part !
-			</p>
+			<!--Contenue Nouveautes -->
+			<section v-else-if="currentPage === 'nouveautes'" id="nouveautes">
+				<h1>Ceci est la page des nouveautées</h1>
+				<p>Ceci est le texte qui décrit qui je suis</p>
+			</section>
 
-			<p class="partie2">
-				Tu peux écouter ce qui te plait ici :
 
-			<a href="http://youtube.com" target="_BLANK">Lien youtube</a>
-			</p>
-			<div class="row">
-			        <div class="col-12 col-sm-6 col-lg-8"> <iframe width="420" height="315"
-src="https://www.youtube.com/embed/CpTLFchI8Zk">
-</iframe> </div>
-			        <div class="col-6 col-lg-4"> <iframe width="420" height="315"
-src="https://www.youtube.com/embed/iXp9xuNi0mU">
-</iframe> </div>
-			      </div>
+			<!--Contenue Catégories -->
+			<section v-else-if="currentPage === 'categories'" id="categories">
+				<h1>Il y en a pour tous les goûts !</h1>
+				<p>Vous pourrez trouver tout style de musique et en découvrir tout autant.</p>
+				<h5>Musique Classique</h5>
+					<section class="card">
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/mmCnQDUSO4I">
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto src="https://www.youtube.com/embed/9E6b3swbnWg"> </iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/QxHkLdQy5f0">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/klPZIGQcrHA">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/KpOtuoHL45Y">
+						</iframe>
+						</div>
+					</section>
+
+				<h5>Hip Hop US</h5>
+					<section class="card">
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/nppKPgdc_u0">
+							</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto src="https://www.youtube.com/embed/yRfQGXFRr30"> </iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/YpugK0RpEaU">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/OA8aw07dpg0">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/R2HuxiqUuTA">
+						</iframe>
+						</div>
+					</section>
+
+				<h5>Rap Français</h5>
+					<section class="card">
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/IG9t33pBxhA">
+							</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto src="https://www.youtube.com/embed/U4EICXeGtx0"> </iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/oJPt2Hc2fXM">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/S-PfztuGo-s">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="https://www.youtube.com/embed/fm4EP_tWmXs">
+						</iframe>
+						</div>
+					</section>
+				<h5>Diso & Funk</h5>
+					<section class="card">
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="">
+							</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto src=""> </iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="">
+						</iframe>
+						</div>
+						<div class="card--content">
+							<iframe width=auto height=auto
+							src="">
+						</iframe>
+						</div>
+					</section>
+
+
+				<h5>Musique électro</h5>
+
+
+
+			</section>
+
+
+			<section v-else-if="currentPage === 'inscription'" id="inscription">
+				<h1>Ceci est la page d'inscription</h1>
+				<p>Allez, inscrit toi</p>
+			</section>
+
+			<section v-else-if="currentPage === 'connexion'" id="connexion">
+				<h1>Ceci est la page de login</h1>
+				<p>Log toi narvalo</p>
+			</section>
+
+			<section v-else>
+				Perdu ? Vous êtes ici.
+			</section>
+		</main>
+
 
 		<!--Bas de page -->
 
@@ -73,37 +275,88 @@ src="https://www.youtube.com/embed/iXp9xuNi0mU">
 		<!-- Footer -->
 		<footer class="page-footer font-small red ">
 
-		    <!-- Footer Elements -->
-		    <div class="container">
+			<!-- Footer Elements -->
+			<div class="container">
 
-		      <!-- Grid row-->
+				<!-- Grid row-->
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+					</ul>
 				</div>
-	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-			<ul class="list-unstyled list-inline social text-center">
-				<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
-				<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
-				<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
-				<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
-				<li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
-			</ul>
+			</hr>
 		</div>
-		</hr>
-	</div>
-		      <!-- Grid row-->
 
-		    </div>
-		    <!-- Footer Elements -->
-
-		    <!-- Copyright -->
-				<div class="footer-copyright text-center py-3">© 2018-2019 Copyright - Teo ANDRIES / Kévin LE BORGNE - All Rights Reserved
-					<a href="https://esiea.fr/"> Esiea.fr</a>
-		    </div>
-		    <!-- Copyright -->
-
-		  </footer>
-		  <!-- Footer -->
 
 	</div>
-	</body>
+	<!-- Footer Elements -->
+
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3">© 2018-2019 Copyright - Teo ANDRIES / Kévin LE BORGNE - All Rights Reserved
+		<a href="https://esiea.fr/"> Esiea.fr</a>
+	</div>
+	<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+
+<!-- script-->
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data: {
+			currentPage: 'accueil'
+		}
+	})
+</script>
+<script>
+// Sans cette ligne + l'import de axios.js (2e <script>), this.$http ne fonctionnera pas
+Vue.prototype.$http = axios
+
+const app = new Vue({
+  el: '#app',
+  data: {
+    currentPage: 'liste',
+    filter: '',
+    menu: '',
+    myList: [],
+    name: ''
+  },
+  created () {
+    // Ici, l'utilisation d'une fonction flêchée () => {} plutôt que function () {} est primordial !
+    // sans fonction fléchée, this.myList = ... ne fonctionnera pas comme prévu
+    this.$http.get('/list')
+      .then(list => {
+        console.log('affichage de ma liste', list)
+        this.myList = list.data
+      })
+      .catch(err => {
+        console.log('error', err)
+      })
+  },
+  methods: {
+    sendNewElement () {
+      this.$http.post('/list', {
+        name: this.name
+      })
+      .then(() => {
+        this.myList.push({
+          name: this.name
+        })
+      })
+    }
+  }
+})
+</script>
+</body>
 </html>
