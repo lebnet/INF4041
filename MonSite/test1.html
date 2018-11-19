@@ -1,27 +1,674 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Container</a>
+<!DOCTYPE html>
+<html>
+
+<style>
+nav ul li {
+  display: inline-block;
+  width: 180px;
+}
+
+table tr th.header-titre {
+  text-align:center;
+  width:100%;
+  padding:5px;
+}
+
+h5.title-categ {
+padding-top: 50px;
+padding-bottom: 5px;  
+}
+
+section.card {
+  display: flex-inline;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  }
+
+section.card {  &::-webkit-scrollbar {
+     display: none;
+   }
+ }
+
+div.card--content{
+  order: 0;
+  flex-grow: auto;
+}
+
+
+/*Style login and sign up*/
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    /* Add a background color when the inputs get focus */
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #FFF;
+        outline: none;
+    }
+
+    /* Set a style for all buttons */
+    button.btn-log-sign {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        opacity: 0.9;
+    }
+
+    .btn-log-sign:hover, .cancelbtn1:hover, .cancelbtn2:hover {
+        opacity:1;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn1 {
+        padding: 14px 20px;
+        background-color: #f44336;
+        color: white;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .cancelbtn2 {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+        color: white;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        opacity: 0.9;
+    }
+
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn1, .signupbtn {
+      float: left;
+      width: 50%;
+    }
+
+    .logbtn {
+      width: 100%;
+    }
+
+    /* Add padding to container elements */
+    .container1 {
+        padding: 16px;
+        background-color: #FFF;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal1 {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: #474e5d;
+        padding-top: 50px;
+    }
+
+    /* Modal Content/Box */
+    .modal1-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* Style the horizontal ruler */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+     
+    /* The Close Button (x) */
+    .close1 {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+    }
+
+    .close1:hover,
+    .close1:focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+    }
+        
+    @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+      .cancelbtn1,.cancelbtn2, .signupbtn {
+       width: 100%;
+      }
+      span.psw {
+       display: block;
+       float: none;
+      }
+    }
+
+</style>
+
+<head>
+  <title>Site de Musique</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/Styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <!--Haut de page -->
+    <header>
+      <table class="tg">
+        <tr>
+          <th class="header"> <a href="index.html">
+            <img src="img/logo.png" width="50" height="50">
+          </a></th>
+          <th class="header-titre"><h1 class="titre">Site Musicalement Votre</h1></th>
+        </tr>
+      </table>
+
+    </header>
+
+    <!--Menu de navigation -->
+
+    <main id="app">
+
+    <!--Navbar-->  
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="navbar-collapse collapse show" id="navbarsExample07" style="">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item" v-on:click="currentPage = 'accueil'">
+              <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+            <li class="nav-item" v-on:click="currentPage = 'nouveautes'">
+              <a class="nav-link" href="#">Nouveautés <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown07">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+            <li class="nav-item" v-on:click="currentPage = 'categories'">
+              <a class="nav-link" href="#">Catégories <span class="sr-only">(current)</span></a>
             </li>
           </ul>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="search">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <form class="form-inline">.
+            <button class="btn btn-outline-info my-2 my-sm-0" onclick="document.getElementById('id01').style.display='block'">Inscription</button>
+            </form>
+            <form class="form-inline">.
+            <button class="btn btn-outline-info my-2 my-sm-0" onclick="document.getElementById('id02').style.display='block'">Connexion</button>
+          </form>
+        </div>
+      </nav>
+
+  <!--Login and sign up -->
+      <div id="id01" class="modal1">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close1" title="Close Modal">&times;</span>
+        <form class="modal1-content animate" action="/action_page.php">
+          <div class="container1">
+            <h1>Inscription</h1>
+            <p>Merci de remplir ce questionnaire pour s'inscrire.</p>
+            <hr>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Entrer Email" name="email" required>
+
+            <label for="psw"><b>Mot de passe</b></label>
+            <input type="password" placeholder="Entrer mot de passe" name="psw" required>
+
+            <label for="psw-repeat"><b>Repeter le mot de passe</b></label>
+            <input type="password" placeholder="Repeter mot de passe" name="psw-repeat" required>
+            <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Se souvenir de moi
+            </label>
+
+
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">Annuler</button>
+              <button type="submit" class="signupbtn btn-log-sign">Inscription</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div id="id02" class="modal1">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close1" title="Close Modal">&times;</span>
+        <form class="modal1-content animate" action="/action_page.php">
+
+          <div class="container1">
+            <label for="uname"><b>Nom d'utilisateur</b></label>
+            <input type="text" placeholder="Entrer le nom d'utilisateur" name="uname" required>
+
+            <label for="psw"><b>Mot de passe</b></label>
+            <input type="password" placeholder="Entrer mot de passe" name="psw" required>
+              
+            <button class="btn-log-sign logbtn" type="submit">Connexion</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Se souvenir de moi
+            </label>
+          </div>
+
+          <div class="container1" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn2 ">Annuler</button>
+            <span class="psw"><a href="#">Mot de passe oublié ?</a></span>
+          </div>
+        </form>
+      </div>
+
+
+    <!--Contenue onglets-->
+      <section v-if="currentPage === 'accueil'" id="accueil">
+        <!--Contenue sous forme de boite -->
+        <h1>Bienvenue !</h1>
+        <p class="partie1">Allume ton enceinte, ça part !</p>
+
+        <p class="partie2">Tu peux écouter ce qui te plait ici :
+          <a href="http://youtube.com" target="_BLANK">Lien youtube</a></p>
+
+          <section class="card">
+            <div class="card--content">
+              <iframe width=auto height=auto
+              src="https://www.youtube.com/embed/iXp9xuNi0mU">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=auto height=auto src="https://www.youtube.com/embed/OA8aw07dpg0"> </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=auto height=auto
+              src="https://www.youtube.com/embed/iXp9xuNi0mU">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=auto height=auto
+              src="https://www.youtube.com/embed/iXp9xuNi0mU">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=auto height=auto
+              src="https://www.youtube.com/embed/iXp9xuNi0mU">
+            </iframe>
+            </div>
+          </section>
+
+        </section>
+
+
+
+      <!--Contenue Nouveautes -->
+      <section v-else-if="currentPage === 'nouveautes'" id="nouveautes">
+        <h1>Les Music' news, l'actualité de la musique.</h1>
+        <p>Toutes les actualités</p>
+          <section class="article-cadre">
+            <listarticles></listarticles>
+            <hr>
+          </section>
+          <h5>Vous pouvez créer votre article ici :</h5>
+          <div class="ajout-article">
+            <form action="/ma-page-de-traitement" method="post">
+                <div>
+                    <label for="title">Titre :</label>
+                    <input type="text" id="name" name="title-article">
+                </div>
+                <div>
+                    <label for="descrip">Description :</label>
+                    <input type="text" id="descrip" name="descrip-article">
+                </div>
+
+
+                <div>
+                    <label for="msg">Contenu :</label>
+                    <textarea id="msg" name="user_message"></textarea>
+                </div>
+                <div class="button btn-log-sign">
+                    <button type="submit">Poster l'article</button>
+                </div>
+            </form>
+          </div>
+                
+      </section>
+
+
+      <!--Contenue Catégories -->
+      <section v-else-if="currentPage === 'categories'" id="categories">
+        <h1>Il y en a pour tous les goûts !</h1>
+        <p>Vous pourrez trouver tout style de musique et en découvrir tout autant.</p>
+        <h5 class="title-categ">Musique Classique</h5>
+          <section class="card">
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/mmCnQDUSO4I">
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300 src="https://www.youtube.com/embed/9E6b3swbnWg"> </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/QxHkLdQy5f0">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/klPZIGQcrHA">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/KpOtuoHL45Y">
+            </iframe>
+            </div>
+          </section>
+
+        <h5 class="title-categ">Hip Hop US</h5>
+          <section class="card">
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/nppKPgdc_u0">
+              </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300 src="https://www.youtube.com/embed/yRfQGXFRr30"> </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/YpugK0RpEaU">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/OA8aw07dpg0">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/R2HuxiqUuTA">
+            </iframe>
+            </div>
+          </section>
+
+        <h5 class="title-categ">Rap Français</h5>
+          <section class="card">
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/IG9t33pBxhA">
+              </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300 src="https://www.youtube.com/embed/U4EICXeGtx0"> </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/oJPt2Hc2fXM">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/S-PfztuGo-s">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/fm4EP_tWmXs">
+            </iframe>
+            </div>
+          </section>
+
+        <h5 class="title-categ">Diso & Funk</h5>
+          <section class="card">
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/qchPLaiKocI">
+              </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300 src="https://www.youtube.com/embed/DG9_pVQaJKY"> </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/GSi4HE0OBcA">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/sKoBpDM9S8c">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/n0xJehv5Fag">
+            </iframe>
+            </div>
+          </section>
+
+        <h5 class="title-categ">Musique électro</h5>
+          <section class="card">
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/hyVVoLy4LSc">
+              </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300 src="https://www.youtube.com/embed/R3FMhQ1jIws"></iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/7ZguAEoNpZw">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/hC8CH0Z3L54">
+            </iframe>
+            </div>
+            <div class="card--content">
+              <iframe width=400 height=300
+              src="https://www.youtube.com/embed/96W0GsRq10A">
+            </iframe>
+            </div>
+          </section>
+
+      </section>
+
+    <!--
+      <section v-else-if="currentPage === 'inscription'" id="inscription">
+        <h1>Ceci est la page d'inscription</h1>
+        <p>Allez, inscrit toi</p>
+      </section>
+
+      <section v-else-if="currentPage === 'connexion'" id="connexion">
+        <h1>Ceci est la page de login</h1>
+        <p>Log toi narvalo</p>
+      </section>
+    -->s
+
+      <section v-else>
+        Perdu ? Vous êtes ici.
+      </section>
+    </main>
+
+
+    <!--Bas de page -->
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small red ">
+
+      <!-- Footer Elements -->
+      <div class="container">
+
+        <!-- Grid row-->
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+          <ul class="list-unstyled list-inline social text-center">
+            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </hr>
+    </div>
+
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018-2019 Copyright - Teo ANDRIES / Kévin LE BORGNE - All Rights Reserved
+    <a href="https://esiea.fr/"> Esiea.fr</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+
+<!-- script-->
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var page = ''
+  Vue.component('listarticles' , {
+    data: function(){
+      return {
+        
+        listArticles: [
+          {
+            id: 1,
+            counter: 0,
+            title: "L'or du commun tease l'album avec « homosapiens » [videoclip]", 
+            description : "Extrait de l'album « Sapiens ».", 
+            img : 'https://static.booska-p.com/images/news/l-or-du-commun-homosapiens-videoclip-649.jpg'
+          },
+          {
+            id: 2,
+            counter: 0,
+            title: 'Lomepal : cover et tracklist de son nouvel album « jeannine »', 
+            description : 'Avec Orelsan, JeanJass, Roméo Elvis et même Philippe Katerine...', 
+            img : 'https://static.booska-p.com/images/news/lomepal-cover-et-tracklist-de-son-album-jeanine-649.jpg'
+          },
+          {
+            id: 3,
+            counter: 0,
+            title: 'La carrière de snoop dogg bientôt sur grand écran ?', 
+            description : "Un film qui retracera l'évolution de sa carrière au fil des années.", 
+            img : 'https://static.booska-p.com/images/news/vers-la-sortie-d-un-biopic-sur-la-carri-re-de-snoop-dogg-649.jpg'
+          },
+          {
+            id: 4,
+            counter: 0,
+            title: "Ice cube s'en prend à trump dans « arrest the president »", 
+            description : "Ice Cube s'engage à son tour.", 
+            img : 'https://static.booska-p.com/images/news/ice-cube-s-en-prend-trump-dans-arrest-the-president-son-649.jpg'
+          }
+        ]
+      }
+    },
+    methods: {
+      clickArticle: function(el){
+        console.log(document.getElementById(el))
+        this.page = 'article' + el
+        console.log(this.page)
+      }
+    },
+    template: `<div>
+          <div v-for="item in listArticles">
+          <hr>
+          <div class="row" v-bind:id="item.id" >
+            
+                <div class="col-6 col-md-4"><img :src="item.img" width=300 height=150></div>                    
+                <div class="col-12 col-md-8" v-on:click="counter += 1">
+                  <span class="article__related">
+                    <time class="article__time" datetime="-- :"> A 12h52</time>
+                    <span class="article__feed"><span class=""></span> {{item.counter}} vues
+                  </span>
+
+                  <h3 class="article__title" href="#" v-on:click="currentPage = 'article'"> 
+                    {{item.title}}
+                  </h3>
+                  <p class="article__paragraph">{{item.description}}</p>
+                </div>
+          </div>
+        </div>
+        </div>
+        `
+  })
+
+
+  const app = new Vue({
+    el: '#app',
+    
+    data: {
+      currentPage: ''
+      
+      
+    }
+  })
+
+// Obtenir la pop-up
+var modal = document.getElementById('id01','id02');
+
+// Quand l'utilisateur clique en dehors de la pop-up, elle se ferme
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
