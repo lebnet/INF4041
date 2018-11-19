@@ -1,1 +1,267 @@
-Hello
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mytube</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <link href="stylesheets/mon_style.css" rel="stylesheet"/>
+
+</head>
+<body>
+<main id="app" class="container">
+    <navigation-bar
+            v-on:change-page="changePage($event)"
+            v-on:logout="logout($event)"
+            v-bind:mon_user="mon_user"
+    ></navigation-bar>
+    <index
+            v-bind:mon_user="mon_user"
+            v-on:change-page="changePage($event)"
+            v-if="currentPage === 'index'" id="index">
+    </index>
+
+    <section v-if="currentPage === 'listeDesArticles'" id="search">
+    </section>
+
+    <section v-if="currentPage === 'categories'">
+     <h1>Il y en a pour tous les goûts !</h1>
+            <p>Vous pourrez trouver tout style de musique et en découvrir tout autant.</p>
+            <h5 class="title-categ">Musique Classique</h5>
+              <section class="card">
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/mmCnQDUSO4I">
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300 src="https://www.youtube.com/embed/9E6b3swbnWg"> </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/QxHkLdQy5f0">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/klPZIGQcrHA">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/KpOtuoHL45Y">
+                </iframe>
+                </div>
+              </section>
+
+            <h5 class="title-categ">Hip Hop US</h5>
+              <section class="card">
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/nppKPgdc_u0">
+                  </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300 src="https://www.youtube.com/embed/yRfQGXFRr30"> </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/YpugK0RpEaU">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/OA8aw07dpg0">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/R2HuxiqUuTA">
+                </iframe>
+                </div>
+              </section>
+
+            <h5 class="title-categ">Rap Français</h5>
+              <section class="card">
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/IG9t33pBxhA">
+                  </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300 src="https://www.youtube.com/embed/U4EICXeGtx0"> </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/oJPt2Hc2fXM">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/S-PfztuGo-s">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/fm4EP_tWmXs">
+                </iframe>
+                </div>
+              </section>
+
+            <h5 class="title-categ">Diso & Funk</h5>
+              <section class="card">
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/qchPLaiKocI">
+                  </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300 src="https://www.youtube.com/embed/DG9_pVQaJKY"> </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/GSi4HE0OBcA">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/sKoBpDM9S8c">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/n0xJehv5Fag">
+                </iframe>
+                </div>
+              </section>
+
+            <h5 class="title-categ">Musique électro</h5>
+              <section class="card">
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/hyVVoLy4LSc">
+                  </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300 src="https://www.youtube.com/embed/R3FMhQ1jIws"></iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/7ZguAEoNpZw">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/hC8CH0Z3L54">
+                </iframe>
+                </div>
+                <div class="card--content">
+                  <iframe width=400 height=300
+                  src="https://www.youtube.com/embed/96W0GsRq10A">
+                </iframe>
+                </div>
+              </section>
+
+      </section>
+
+    </section>
+
+
+    <section>
+        <ajouter-article-form v-if="currentPage === 'listeDess'|| currentPage === 'index'"
+                           v-on:change-page="changePage($event)"
+                           v-bind:mon_user="mon_user"
+        >
+        </ajouter-article-form>
+    </section>
+
+    <section v-if="currentPage === 'listeDesArticles'  || currentPage === 'index'" id="listeDesArticles">
+        <div class="form-group">
+            <input v-model="search" type="text" class="form-control" placeholder="Cherchez votre article">
+        </div>
+        <div class="row" v-for="i in Math.ceil(filteredList.length / 3)">
+            <article-item
+                    v-for="article in filteredList.slice((i - 1) * 3, i * 3)"
+                    v-bind:articleitem="article"
+                    v-bind:mon_user="mon_user"
+                    v-on:event-article="viewArticle(article.Index)"
+                    v-on:edit-article="editArticle(article.Index)"
+                    v-on:delete-article="deleteArticle(article)"
+            >
+            </article-item>
+        </div>
+    </section>
+    <section v-if="currentPage === 'viewArticle'" id="viewArticle">
+        <article-view
+                v-bind:articleitem="articlesList[currentArticleId]"
+                v-on:change-page="changePage($event)"
+                v-bind:mon_user="mon_user"
+                v-on:delete-article="deleteArticle(articlesList[currentArticleId])"
+        >
+        </article-view>
+    </section>
+
+    <section v-if="currentPage === 'addArticle'" id="addArticle">
+        <article-add
+                v-on:change-page="changePage($event)"
+                v-on:create-article="createArticle($event)"
+        >
+        </article-add>
+    </section>
+    <section v-if="currentPage === 'editArticle'" id="editArticle">
+        <article-edit
+                v-bind:articleitem="articlesList[currentArticleId]"
+                v-on:change-page="changePage($event)"
+                v-on:modify-article="modifyArticle($event)"
+        >
+        </article-edit>
+    </section>
+
+    <section v-if="currentPage === 'connexion'" id="connexion">
+        <div v-if="error.message!=''" class="alert alert-danger" role="alert">
+            <strong>{{ error.message }}</strong>
+        </div>
+
+        <div v-if="success.message!=''" class="alert alert-success" role="alert">
+            <strong>{{ success.message }}</strong>
+        </div>
+
+        <connexion-form
+                v-on:connexion="connexion($event)">
+        </connexion-form>
+    </section>
+    <section v-if="currentPage === 'inscription'" id="inscription">
+        <div v-if="error.message!=''" class="alert alert-danger" role="alert">
+            <strong>{{ error.message }}</strong>
+        </div>
+
+        <div v-if="success.message!=''" class="alert alert-success" role="alert">
+            <strong>{{ success.message }}</strong>
+        </div>
+        <inscription-form
+                v-on:inscriptionuser="inscriptionuser($event)"
+        >
+        </inscription-form>
+    </section>
+
+    <footer class="page-footer font-small red ">
+
+          <div class="footer-copyright text-center py-3">© 2018-2019 Copyright - Teo ANDRIES / Kévin LE BORGNE - All Rights Reserved
+            <a href="https://esiea.fr/"> Esiea.fr</a>
+          </div>
+
+    </footer>
+    
+
+
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="component.js"></script>
+<script src="indexVue.js">
+</script>
+</body>
+</html>

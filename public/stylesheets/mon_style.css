@@ -1,0 +1,101 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.mesinputs {
+    text-align: center;
+    width: 10em;
+}
+
+.inputdescription{
+    width: 50em;
+}
+
+.accueil_titre{
+    color: #ffffff;
+}
+
+
+.top_titre_centrer{
+    color: #ffffff;
+    background-color: #0c5460;
+    text-align: center;
+}
+
+.button_deco{
+    padding: 9px 12px;
+
+}
+
+.form_deco{
+    padding: 2px 0px;
+    margin: 0px 0px;
+    width:100%
+}
+
+input .form_deco{
+    color: #0900ff;
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+}
+
+.normal-description{
+     text-align:  justify;
+}
+
+.thumbnail {
+
+    text-align: center;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-icon {
+
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    border-radius: 4px;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+span glyphicon glyphicon-user {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+nav ul li {
+  display: inline-block;
+  width: 180px;
+}
+
+h5.title-categ {
+padding-top: 50px;
+padding-bottom: 5px;  
+}
+
+section.card {
+  display: flex-inline;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  }
+
+section.card {  &::-webkit-scrollbar {
+     display: none;
+   }
+ }
+
+div.card--content{
+  order: 0;
+  flex-grow: 1;
